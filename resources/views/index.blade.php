@@ -1,13 +1,13 @@
-<h1>
-Task List
-</h1>
+@extends('layouts.app')
 
-<div>
+@section('title', "List of Tasks")
+
+@section('content')
     @forelse ( $tasks as $task)
         <div>
-            <a href="{{ $task->id }}">{{ $task->title }}</a>
+            <a href="tasks/{{ $task->id }}">{{ $task->title }}</a>
         </div>
         @empty
         <div>Task list is empty</div>
     @endforelse
-</div>
+@endsection

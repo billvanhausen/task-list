@@ -60,14 +60,17 @@ $tasks = [
 
  /*********************************/
 
+Route::get('/', function () {
+    return redirect()->route('tasks.index');
+});
 
-Route::get('/', function () use ($tasks) {
+Route::get('/tasks', function () use ($tasks) {
     return view('index',[
         'tasks' => $tasks  
     ]);
-})->name('tasks.index ');
+})->name('tasks.index');
 
-Route::get('/{id} ', function ($id) use ($tasks) {
+Route::get('/tasks/{id} ', function ($id) use ($tasks) {
   $task = collect($tasks)->firstWhere('id',$id);
 
   if(!$task){
