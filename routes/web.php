@@ -14,10 +14,16 @@ Route::get('/tasks', function () {
     ]);
 })->name('tasks.index');
 
+Route::view('/tasks/create', 'create')->name('tasks.create');
+
 Route::get('/tasks/{id} ', function ($id) {
   return view('show', [ 'task' => App\Models\Task::findOrFail($id) ]);
 })->name('tasks.show');
 
+Route::post('/tasks', function(){
+    dd('We have reached the store route');
+})->name('tasks.store');
+
 Route::fallback(function(){
-    return "Still Got Somewhere"; 
+    return redirect()->route('tasks.index');
 });
