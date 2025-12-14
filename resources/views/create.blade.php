@@ -12,11 +12,11 @@
     </div>
     <div>
         <label for="description">Description</label>
-        <textarea name="description" id="description" rows="2" />
+        <textarea name="description" id="description" rows="2"></textarea>
     </div>
     <div>
         <label for="long_description">Long Description</label>
-        <textarea name="long_description" id="long_description" rows="8" />
+        <textarea name="long_description" id="long_description" rows="8"></textarea>
     </div>
     <div>
         <button type="submit">Add Task</button>
