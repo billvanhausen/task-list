@@ -10,4 +10,8 @@
         @empty
         <div>Task list is empty</div>
     @endforelse
+
+    @section('footer')
+        <a href="tasks/create">Create Task</a>
+    @endsection
 @endsection

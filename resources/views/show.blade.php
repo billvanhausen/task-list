@@ -12,3 +12,7 @@
 <p>{{ $task->created_at }}</p>
 <p>{{ $task->updated_at }}</p>
 @endsection
+
+@section('footer')
+ <a href="{{ $task->id }}/edit">Edit Task</a>
+@endsection
