@@ -11,6 +11,12 @@
         <div>Task list is empty</div>
     @endforelse
 
+    @if ($tasks->count())
+        <nav>
+        {{ $tasks->links() }}
+        </nav>
+    @endif
+
     @section('footer')
         <a href="tasks/create">Create Task</a>
     @endsection

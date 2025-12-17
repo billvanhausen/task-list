@@ -14,7 +14,8 @@ Route::get('/', function () {
 Route::get('/tasks', function () {
     return view('index',[
 //        'tasks' => Task::all()
-        'tasks' => Task::all()->where('completed', null, 0)
+//        'tasks' => Task::latest()->where('completed', null, 0)
+        'tasks' => Task::latest()->paginate(10)
     ]);
 })->name('tasks.index');
 
